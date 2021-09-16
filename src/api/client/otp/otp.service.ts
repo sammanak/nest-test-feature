@@ -80,9 +80,7 @@ export class OtpService {
       }
 
       return {
-        message: 'ok',
-        otp: process.env.NODE_ENV.toUpperCase() === 'DEVELOPMENT' ? randomCode : undefined,
-        hashCode: process.env.NODE_ENV.toUpperCase() === 'DEVELOPMENT' ? hashCode : undefined
+        message: 'ok'
       };
     });
   }

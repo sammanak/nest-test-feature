@@ -6,7 +6,7 @@ import { E } from '@common';
 export class SendOtpBody {
   @IsNotEmpty()
   @IsEnum(E.OtpVerifyTypeEnum)
-  @ApiProperty({ type: 'enum', enum: E.OtpVerifyTypeEnum })
+  @ApiProperty({ type: 'enum', enum: E.OtpVerifyTypeEnum, default: E.OtpVerifyTypeEnum.accountVerification })
   type: E.OtpVerifyTypeEnum;
 
   @IsNotEmpty()

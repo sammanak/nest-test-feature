@@ -26,15 +26,6 @@ export class AccountService {
     private readonly em: EntityManager
   ) {}
 
-  async zeroPad(id: number, places: number) {
-    return String(id).padStart(places, '0');
-  }
-
-  async generateCardCode(id: number) {
-    // sample: EA000001
-    return 'EA' + (await this.zeroPad(id, 6));
-  }
-
   async register(body: RegisterBody) {
     const { phoneOrEmail, password } = body;
 
@@ -85,10 +76,10 @@ export class AccountService {
   }
 
   async detail(authUser: any) {
-    const { id, providerId, email, phone } = authUser;
+    const { id } = authUser;
     const customer = await this.account.findOne({
-      where: { id: +id || null }
-      // select: ['id', 'firstName', 'lastName', 'profilePicture', 'gender', 'createdAt']
+      where: { id: +id || null },
+      select: ['id', 'firstName', 'providerId', 'lastName', 'gender', 'email', 'phone', 'profilePicture', 'createdAt']
     });
     if (!customer) throw new NotFoundException({ statusCode: 1114, message: 'Account not yet register' });
 
@@ -106,14 +97,8 @@ export class AccountService {
     }
 
     Object.assign(account, body);
-    return this.em.transaction(async em => {
-      // Get setting whether gc_register_approval is 'yes' or 'no'
-      const setting = await this.setting.find();
-      const gcUpdateApproval = setting.find(item => item.key === 'gc_update_approval');
-      await em.getRepository(AccountEntity).save(account);
-
-      return { message: 'ok' };
-    });
+    await this.account.save(account);
+    return { message: 'ok' };
   }
 
   async verifyAccount(body: VerifyAccountBody) {

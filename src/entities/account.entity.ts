@@ -7,8 +7,8 @@ export class AccountEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ default: '' })
-  provider: string;
+  @Column({ type: 'enum', enum: E.AccountProviderEnum })
+  provider: E.AccountProviderEnum;
 
   @Column({ default: '' })
   providerId: string;
@@ -25,13 +25,13 @@ export class AccountEntity {
   @Column({ type: 'enum', enum: E.GenderEnum })
   gender: E.GenderEnum;
 
-  @Column({ nullable: true, unique: true })
+  @Column({ default: '' })
   username: string;
 
-  @Column({ nullable: true })
+  @Column({ default: '' })
   email: string;
 
-  @Column({ nullable: true })
+  @Column({ default: '' })
   phone: string;
 
   @Column({ default: false })

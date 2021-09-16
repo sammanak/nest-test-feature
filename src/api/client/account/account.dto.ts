@@ -32,7 +32,7 @@ export class RegisterBody {
   @IsOptional()
   @IsString()
   @ApiPropertyOptional()
-  imageUrl: string = '';
+  profilePicture: string = '';
 }
 
 export class UpdateInfoBody {
@@ -51,7 +51,7 @@ export class UpdateInfoBody {
 
   @IsOptional()
   @ApiPropertyOptional()
-  imageUrl: string;
+  profilePicture: string;
 }
 
 export class VerifyAccountBody {

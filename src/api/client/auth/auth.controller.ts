@@ -1,7 +1,7 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
-import { AuthBody, CustomerAuthBody, RegenerateRefreshTokenBody } from './auth.dto';
+import { AuthBody, RegenerateRefreshTokenBody } from './auth.dto';
 import { AuthService } from './auth.service';
 
 @ApiTags('Authentications')
@@ -21,23 +21,5 @@ export class AuthController {
   async regenerateRefreshToken(@Body() body: RegenerateRefreshTokenBody) {
     const newTokenSet = await this.service.regenerateTokens(body.refreshToken);
     return { data: newTokenSet };
-  }
-
-  @Post('/login/google')
-  async loginWithGoogle(@Body() body: CustomerAuthBody) {
-    const tokenSet = await this.service.loginWithGoogle(body.accessToken);
-    return { data: tokenSet };
-  }
-
-  @Post('/login/facebook')
-  async loginWithFacebook(@Body() body: CustomerAuthBody) {
-    const tokenSet = await this.service.loginWithFacebook(body.accessToken);
-    return { data: tokenSet };
-  }
-
-  @Post('/login/apple')
-  async loginWithApple(@Body() body: CustomerAuthBody) {
-    const tokenSet = await this.service.loginWithApple(body.accessToken);
-    return { data: tokenSet };
   }
 }

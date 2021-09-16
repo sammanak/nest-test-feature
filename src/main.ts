@@ -6,8 +6,6 @@ import * as compression from 'compression';
 import * as helmet from 'helmet';
 import { resolve } from 'path';
 
-import { AuthModule } from '@api/client/auth';
-import { ClientAuthGuard } from '@api/client/auth/auth.guard';
 import { ClientModule } from '@api/client/client.module';
 
 import { AppModule } from './app.module';
@@ -30,10 +28,10 @@ async function bootstrap() {
     deepScanRoutes: true
   });
   SwaggerModule.setup('doc/api/client', app, clientDocument);
-  const authGuard = app.select(AuthModule).get(ClientAuthGuard);
+  // const authGuard = app.select(AuthModule).get(ClientAuthGuard);
 
   app.useGlobalFilters(new AppExceptionFilter());
-  app.useGlobalGuards(authGuard);
+  // app.useGlobalGuards(authGuard);
   app.useStaticAssets(resolve('.', 'public'));
   app.useGlobalPipes(
     new ValidationPipe({
