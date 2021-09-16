@@ -1,0 +1,41 @@
+{
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "typescriptHero.imports.organizeOnSave": true,
+  "typescriptHero.imports.multiLineWrapThreshold": 120,
+  "typescriptHero.imports.multiLineTrailingComma": false,
+  "sql-formatter.uppercase": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".nyc_output": true,
+    ".vscode": false,
+    "coverage": true,
+    "dist": true,
+    "node_modules": true,
+    "package-lock.json": true
+  },
+  "typescriptHero.imports.grouping": [
+    "Plains",
+    "Modules",
+    "/^@api|@common|@dynamodb|@entities|@lib|@models|@queries|@repositories|@schemas/",
+    "Workspace"
+  ],
+  "cSpell.words": [
+    "Ecommerce",
+    "Parens",
+    "autopopulate",
+    "callsites",
+    "commitlint",
+    "commitlintrc",
+    "nestjs",
+    "prebuild",
+    "swlogo",
+    "topbar",
+    "typeorm",
+    "varchar"
+  ]
+}

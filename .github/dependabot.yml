@@ -1,0 +1,45 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@types/node"
+    versions:
+    - 14.14.35
+    - 14.14.36
+    - 14.14.37
+    - 14.14.39
+    - 14.14.41
+    - 15.0.0
+  - dependency-name: ts-loader
+    versions:
+    - 8.0.18
+    - 8.1.0
+    - 9.0.0
+    - 9.1.0
+  - dependency-name: eslint
+    versions:
+    - 7.22.0
+    - 7.23.0
+    - 7.24.0
+  - dependency-name: typescript
+    versions:
+    - 4.2.3
+  - dependency-name: "@typescript-eslint/eslint-plugin"
+    versions:
+    - 4.18.0
+    - 4.19.0
+    - 4.20.0
+    - 4.21.0
+  - dependency-name: rxjs
+    versions:
+    - 6.6.6
+  - dependency-name: "@nestjs/cli"
+    versions:
+    - 7.5.6
+  - dependency-name: ts-jest
+    versions:
+    - 26.5.4

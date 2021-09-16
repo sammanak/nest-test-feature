@@ -1,0 +1,20 @@
+{
+  "unwantedRecommendations": [],
+  "recommendations": [
+    "coenraads.bracket-pair-colorizer-2",
+    "editorconfig.editorconfig",
+    "tyriar.sort-lines",
+    "aaron-bond.better-comments",
+    "christian-kohler.path-intellisense",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "formulahendry.code-runner",
+    "mikestead.dotenv",
+    "rbbit.typescript-hero",
+    "streetsidesoftware.code-spell-checker",
+    "vscode-icons-team.vscode-icons",
+    "adpyke.vscode-sql-formatter",
+    "tabnine.tabnine-vscode"
+  ]
+}
