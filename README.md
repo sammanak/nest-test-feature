@@ -26,6 +26,8 @@ $ yarn start:prod
 
 URL: http://localhost:3000/doc/api/client
 
+![image](https://user-images.githubusercontent.com/6621892/133816340-15f4ccec-a62b-48c0-a6a0-9560df958ab3.png)
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
