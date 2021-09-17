@@ -43,7 +43,7 @@ async function bootstrap() {
   );
 
   app.enableCors();
-  if (process.env.NODE_ENV === 'production') app.use(helmet());
+  if (process.env.NODE_ENV === 'PRODUCTION') app.use(helmet());
   app.set('trust proxy', 1);
   app.use(compression());
 
