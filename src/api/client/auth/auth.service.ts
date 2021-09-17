@@ -1,9 +1,7 @@
 import { BadRequestException, ConflictException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
 import { isEmail, isPhoneNumber } from 'class-validator';
-import { BaseRepository } from 'src/repositories/base.repository';
 import { EntityManager } from 'typeorm';
 
 import { E } from '@common';
@@ -14,14 +12,9 @@ import { JWTPayload } from './auth.interfaces';
 
 @Injectable()
 export class AuthService {
-  constructor(
-    @InjectRepository(AccountEntity)
-    private account: BaseRepository<AccountEntity>,
-    private em: EntityManager,
-    private jwtService: JwtService
-  ) {}
+  constructor(private em: EntityManager, private jwtService: JwtService) {}
 
-  async loginWithEmailOrPhone(body: AuthBody) {
+  async login(body: AuthBody) {
     return this.em.transaction(async em => {
       const { phoneOrEmail, password } = body;
       const accountType = E.AccountTypeEnum.customer;

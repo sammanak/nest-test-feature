@@ -11,8 +11,8 @@ export class AuthController {
 
   @Post('login')
   @ApiOperation({ summary: 'customer authenticate with phone/email' })
-  async loginWithEmailOrPhone(@Body() body: AuthBody) {
-    const tokenSet = await this.service.loginWithEmailOrPhone(body);
+  async login(@Body() body: AuthBody) {
+    const tokenSet = await this.service.login(body);
     return { data: tokenSet };
   }
 

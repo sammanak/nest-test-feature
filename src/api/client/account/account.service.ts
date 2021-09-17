@@ -8,11 +8,10 @@ import {
 import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
 import { isEmail, isPhoneNumber } from 'class-validator';
-import { BaseRepository } from 'src/repositories/base.repository';
-import { EntityManager } from 'typeorm';
+import { EntityManager, Repository } from 'typeorm';
 
 import { E } from '@common';
-import { AccountEntity, AccountOtpEntity, SettingEntity } from '@entities';
+import { AccountEntity, AccountOtpEntity } from '@entities';
 
 import { RegisterBody, UpdateInfoBody, VerifyAccountBody, VerifyForgotPasswordBody } from './account.dto';
 
@@ -20,9 +19,7 @@ import { RegisterBody, UpdateInfoBody, VerifyAccountBody, VerifyForgotPasswordBo
 export class AccountService {
   constructor(
     @InjectRepository(AccountEntity)
-    private account: BaseRepository<AccountEntity>,
-    @InjectRepository(SettingEntity)
-    private setting: BaseRepository<SettingEntity>,
+    private account: Repository<AccountEntity>,
     private readonly em: EntityManager
   ) {}
 
@@ -35,7 +32,6 @@ export class AccountService {
     body['type'] = type;
     body['isVerified'] = false;
     body['status'] = E.StatusEnum.active;
-    body['imageUrl'] = '';
 
     const where = [{ type }];
 
