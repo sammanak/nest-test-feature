@@ -6931,10 +6931,10 @@ mongoose-autopopulate@^0.14.0:
   resolved "https://registry.yarnpkg.com/mongoose-autopopulate/-/mongoose-autopopulate-0.14.0.tgz#cfe69a877c10c7965b7f13f3d9dd410ec6f8f429"
   integrity sha512-3EsOeFpEAwK2XQntI9CUf7dOq5HpI3lZFYzXukD0ep0Ctmdewgyt5VgS64Afuf/K6QggLt9RKsjexVphnhmeXg==
 
-mongoose@^6.0.6:
-  version "6.0.6"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-6.0.6.tgz#d99d7c478b121e23c0035682da1b9b7640bff48b"
-  integrity sha512-8lHgva/q5msZT16KOKDl+26Mh7uzTrmznup0p/TMqDCt7Y41voP7rZ0sTW/6tk2nsrmmMlJzzThJ8vexq7aQtQ==
+mongoose@^6.0.8:
+  version "6.0.8"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-6.0.8.tgz#44324387e2b4ed200f04e486aaa60f1dfcf486a1"
+  integrity sha512-7XZ5TUoDtF8af7+mKfL58s8dN2BKmldQPTlmkb41PaRAleBVGeAck7Mj6JlIh9SOCi+64GT+afebiJaeyXe1Lw==
   dependencies:
     bson "^4.2.2"
     kareem "2.3.2"
