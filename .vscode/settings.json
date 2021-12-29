@@ -1,6 +1,6 @@
 {
   "editor.formatOnSave": true,
-  "files.autoSave": "onFocusChange",
+  "files.autoSave": "off",
   "typescriptHero.imports.organizeOnSave": true,
   "typescriptHero.imports.multiLineWrapThreshold": 120,
   "typescriptHero.imports.multiLineTrailingComma": false,

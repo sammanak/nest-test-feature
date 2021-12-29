@@ -29,7 +29,8 @@ export class UploadService {
         case 'jpg':
         case 'jpeg':
         case 'svg':
-          objectKey = env + '/client/account/' + accountId + '/' + 'image/' + item.type + '/' + item.filename;
+          objectKey =
+            'LEARN/' + env + '/client/account/' + accountId + '/' + 'image/' + item.type + '/' + item.filename;
           accessUrl = baseUrl + '/' + objectKey;
           break;
         default:
